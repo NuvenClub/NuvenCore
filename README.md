@@ -2,5 +2,12 @@
 
 https://app.codacy.com/gh/NuvenClub/NuvenCore/dashboard
 
-- [  ] Recurso X
-- [ x ] Recurso Y
+- [ ] Mercury
+- [x] Venus
+- [x] Earth (Orbit/Moon)
+- [x] Mars
+- [ ] Jupiter
+- [ ] Saturn
+- [ ] Uranus
+- [ ] Neptune
+- [ ] Comet Haley
