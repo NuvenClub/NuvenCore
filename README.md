@@ -19,10 +19,10 @@ No arquivo Language.yml é possivel editar:
 <sub> **Sistemas | Otimizados e Compartilhados**</sub>
 - **NÍVEIS**: Sistema de níveis, para cada minigame, como os lobbies tem o servidor compartilhado, o nível no chat deverá aparecer por qual local o jogador mandou mensagem no chat. Ou seja, se o jogador estiver no Lobby, não aparecerá o nível atrás do nick no chat. <--- * Não possui Nível para toda a Network, como no hypixel.
 - **CASH**: Economia do servidor utilizada para comprar, produtos da loja de cash, kits e habilidades nos minigames, upgrade de vip.
-- **Lobby**: Todos os lobbies estarão no mesmo servidor, ou seja, o Lobby #1 será o mesmo servidor em todos os minigames, terão o Tab e chat compartilhados. Os Lobbies seguintes como Lobby #2 ou Lobby #3 serão outros servidores.
+- **Lobby**: Todos os lobbies estarão no mesmo servidor, ou seja, o Lobby #1 será o mesmo servidor em todos os minigames, com Tab e chat compartilhados. Os Lobbies subsequentes, como Lobby #2 ou Lobby #3, serão servidores distintos.
 - **NPC**(jogar): Seguindo a lógica de lobbies acima, cada mapa terá seu NPC de jogar para entrar nas partidas de cada minigame.
 - **Proteção de NPC**: ao jogador chegar a =< 1 bloco de distância o jogador deve ficar invisível. caso o jogador entre no bloco que o npc está o jogador será jogado para outra direção.
-- **Custom Join Items**
+- **Hotbar**: Customização de cargos e hotbar.
 - **SISTEMAS DE ARENA BUNGEE-MODE**: Um novo modo de bungee escalável. Ele pode hospedar várias arenas na mesma instância do servidor, clonar e iniciar novas arenas quando necessário, para que outros jogadores possam participar. O servidor pode ser reiniciado automaticamente após uma certa quantidade de jogos jogados. Isso exigirá a instalação do nSkywarsProxy em seus servidores de lobby para que os jogadores possam participar. E, é claro, você pode executar quantos servidores quiser no modo bungee.
 - **Redirecionamento**: Se um servidor for reiniciado ou cair por qualquer motivo, os jogadores devem ser redirecionados para um servidor de Lobby disponível.
 
@@ -50,6 +50,12 @@ No arquivo Language.yml é possivel editar:
 - ```/ncore chat filter (all/block)```: Comando para ativar ou desativar a visualização de palavras filtradas pelo servidor.
 - ```/ncore chat ignore (player)```: Comando para ignorar mensagens privadas de um jogador.
 
+<sub> **Sistemas | Lobby**</sub>
+- **Mensagem ao entrar**: Ao entrar no lobby, será exibida uma mensagem avisando. * Requer cargo [Vip] ou superior
+- **Tempo ausente**:Se o jogador entrar no Lobby de Skywars e retornar ao servidor em menos de 15 minutos, ele será redirecionado ao lobby de Skywars; após o tempo determinado, ele deverá entrar no Lobby principal.
+- **Pontos de Spawn**: Deve ser possível setar mais de 1 spawn para que os jogadores entrem aleatóriamente entre um deles. 
+- **Entrar voando**: Se o jogador tiver o modo de fly ativado nas preferências ou por comando, ao entrar no lobby, ele deverá entrar voando a três blocos acima do local de spawn.
+
 ## Características em Desenvolvimento
 <sub> **Em-Desenvolvimento | Funções principais abaixo**</sub>
 
@@ -58,7 +64,11 @@ Com o propósito de aprimorar o fluxo atual para os futuros minigames, optamos p
 Os últimos downloads, wiki e outros links úteis podem ser encontrados na página inicial do projeto em [docs.nuven.club](https://return-3.gitbook.io/ncore/)
 
 - [ ] Banco de Dados com Hikari
+- [ ] [Preferências](https://return-3.gitbook.io/ncore/preferencias)
+- [ ] [BOT - Discord](https://return-3.gitbook.io/ncore/outros/bot-do-discord) (Vinculação com o Servidor)
+- [ ] [Sistema de Lobbies](https://return-3.gitbook.io/ncore/outros/lobby)
 - [ ] Perfil de Jogadores
+- [ ] Migração de dados de um jogador para outro
 - [ ] Comandos
 - [ ] Sistema de Níveis
 - [ ] Sistema de NPC (Proteção)
@@ -67,10 +77,7 @@ Os últimos downloads, wiki e outros links úteis podem ser encontrados na pági
 - [ ] Sistemas de arena Bungee-mode
 - [ ] Redirecionamento de Servidores
 - [ ] Chat (Hover's, chat privado & administração de chat)
-- [ ] [Preferências](https://return-3.gitbook.io/ncore/preferencias)
-- [ ] [BOT - Discord](https://return-3.gitbook.io/ncore/outros/bot-do-discord) (Vinculação com o Servidor)
 - [ ] Compatibilidade com DecentHolograms, Vault.
-- [ ] [Sistema de Lobbies](https://return-3.gitbook.io/ncore/outros/lobby)
 
 ## Requisitos
 Este plugin funciona em **Spigot** e **BungeeCord/Variações**. Oficialmente, é suporta
