@@ -22,6 +22,7 @@ No arquivo Language.yml é possivel editar:
 - **Lobby**: Todos os lobbies estarão no mesmo servidor, ou seja, o Lobby #1 será o mesmo servidor em todos os minigames, terão o Tab e chat compartilhados. Os Lobbies seguintes como Lobby #2 ou Lobby #3 serão outros servidores.
 - **NPC**(jogar): Seguindo a lógica de lobbies acima, cada mapa terá seu NPC de jogar para entrar nas partidas de cada minigame.
 - **Proteção de NPC**: ao jogador chegar a =< 1 bloco de distância o jogador deve ficar invisível. caso o jogador entre no bloco que o npc está o jogador será jogado para outra direção.
+- **Custom Join Items**
 - **SISTEMAS DE ARENA BUNGEE-MODE**: Um novo modo de bungee escalável. Ele pode hospedar várias arenas na mesma instância do servidor, clonar e iniciar novas arenas quando necessário, para que outros jogadores possam participar. O servidor pode ser reiniciado automaticamente após uma certa quantidade de jogos jogados. Isso exigirá a instalação do nSkywarsProxy em seus servidores de lobby para que os jogadores possam participar. E, é claro, você pode executar quantos servidores quiser no modo bungee.
 - **Redirecionamento**: Se um servidor for reiniciado ou cair por qualquer motivo, os jogadores devem ser redirecionados para um servidor de Lobby disponível.
 
@@ -73,10 +74,11 @@ Os últimos downloads, wiki e outros links úteis podem ser encontrados na pági
 
 ## Requisitos
 Este plugin funciona em **Spigot** e **BungeeCord/Variações**. Oficialmente, é suporta
-servidores Spigot, Paper & Waterfall. É necessário usar o **Java 8** Spigot 1.8.8 R3.
+servidores Spigot, Paper & Waterfall. É necessário usar o **Java 8** Spigot 1.8.8_R3.
 
 ### Progresso com Traduções
-[Translation Chart](https://badges.awesome-crowdin.com/translation-12780139-594479.png)
+Este arquivo será disponibilizado para que outros usuários possam contribuir com o Projeto durante sua tradução.
+- [Traduções](https://crowdin.com/project/ncore/translations)
 
 # Libraries externas
 - [bStats](https://bstats.org/getting-started/include-metrics)
