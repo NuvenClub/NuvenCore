@@ -51,7 +51,7 @@ No arquivo Language.yml é possivel editar:
 - ```/ncore chat ignore (player)```: Comando para ignorar mensagens privadas de um jogador.
 
 <sub> **Sistemas | Lobby**</sub>
-- **Mensagem ao entrar**: Ao entrar no lobby, será exibida uma mensagem avisando. * Requer cargo [Vip] ou superior
+- [**Mensagem ao entrar**](https://return-3.gitbook.io/ncore/configs/languages-language_br.yml): Ao entrar no lobby, será exibida uma mensagem avisando. * Requer cargo [Vip] ou superior
 - **Tempo ausente**:Se o jogador entrar no Lobby de Skywars e retornar ao servidor em menos de 15 minutos, ele será redirecionado ao lobby de Skywars; após o tempo determinado, ele deverá entrar no Lobby principal.
 - **Pontos de Spawn**: Deve ser possível setar mais de 1 spawn para que os jogadores entrem aleatóriamente entre um deles. 
 - **Entrar voando**: Se o jogador tiver o modo de fly ativado nas preferências ou por comando, ao entrar no lobby, ele deverá entrar voando a três blocos acima do local de spawn.
@@ -76,7 +76,8 @@ Os últimos downloads, wiki e outros links úteis podem ser encontrados na pági
 - [ ] Bungeecord (Lobby -> minigame)
 - [ ] Sistemas de arena Bungee-mode
 - [ ] Redirecionamento de Servidores
-- [ ] Chat (Hover's, chat privado & administração de chat)
+- [ ] [Chat (Hover's, chat privado & administração de chat)](https://return-3.gitbook.io/ncore/configs/languages-language_br.yml)
+- [ ] [Múltiplos idiomas](https://return-3.gitbook.io/ncore/configs/languages-language_br.yml)
 - [ ] Compatibilidade com DecentHolograms, Vault.
 
 ## Requisitos
