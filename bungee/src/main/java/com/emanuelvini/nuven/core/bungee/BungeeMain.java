@@ -68,6 +68,8 @@ public class BungeeMain extends Plugin {
             val packetListenerRegistry = new PacketListenerRegistry(this);
             packetListenerRegistry.register();
 
+
+
             logger.success("Plugin habilitado com sucesso.");
         } catch (Exception e) {
             logger.error("Falha ao acessar o banco de dados, por favor informe abaixo:");

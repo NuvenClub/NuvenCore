@@ -63,11 +63,11 @@ Com o propósito de aprimorar o fluxo atual para os futuros minigames, optamos p
 
 Os últimos downloads, wiki e outros links úteis podem ser encontrados na página inicial do projeto em [docs.nuven.club](https://return-3.gitbook.io/ncore/)
 
-- [ ] Banco de Dados com Hikari
+- [x] Banco de Dados com Hikari
 - [ ] [Preferências](https://return-3.gitbook.io/ncore/preferencias)
 - [ ] [BOT - Discord](https://return-3.gitbook.io/ncore/outros/bot-do-discord) (Vinculação com o Servidor)
 - [ ] [Sistema de Lobbies](https://return-3.gitbook.io/ncore/outros/lobby)
-- [ ] Perfil de Jogadores
+- [x] Perfil de Jogadores
 - [ ] Migração de dados de um jogador para outro
 - [ ] Comandos
 - [ ] Sistema de Níveis
