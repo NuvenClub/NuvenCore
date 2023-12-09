@@ -1,0 +1,5 @@
+name: NuvenCore
+description: NuvenCore for Bukkit bridge.
+main: com.emanuelvini.nuven.core.bukkit.BukkitMain
+version: 1.0.0-BETA
+author: emanuelVINI

@@ -1,5 +1,5 @@
 name: NuvenCore
 description: NuvenCore for BungeeCord bridge.
 main: com.emanuelvini.nuven.core.bungee.BungeeMain
-version: ${plugin.version}
+version: 1.0.0-BETA
 author: emanuelVINI

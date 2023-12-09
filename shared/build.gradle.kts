@@ -14,9 +14,7 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
-    compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
-    implementation("com.github.HenryFabio.configuration-injector:bukkit:1.0.2")
-    implementation(project(":shared"))
+    implementation("com.github.HenryFabio.configuration-injector:common:1.0.2")
 }
 
 tasks.test {
