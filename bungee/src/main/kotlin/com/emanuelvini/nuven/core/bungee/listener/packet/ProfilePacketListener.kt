@@ -21,11 +21,10 @@ class ProfilePacketListener(
 
     @EventHandler
     fun onPluginMessaging(event: PluginMessageEvent) {
-        println(event.tag)
         if (!event.tag.equals("nvcore:main")) return
         val byteStream = ByteStreams.newDataInput(event.data)
         val subChannel = byteStream.readUTF()
-        println(subChannel)
+
         if (!subChannel.startsWith("profile")) return
 
         if (subChannel.endsWith("get")) {
@@ -39,10 +38,8 @@ class ProfilePacketListener(
             }
         } else {
             val data = byteStream.readUTF()
-            println(data)
             val profile = ProfileUtil.from(data)
             profileRepository.saveData(profile)
         }
-
     }
 }

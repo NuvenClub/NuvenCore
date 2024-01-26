@@ -1,6 +1,7 @@
 package com.emanuelvini.nuven.core.bungee.data.repository
 
 import com.emanuelvini.nuven.core.bungee.data.PersistentRepository
+import com.emanuelvini.nuven.core.bungee.data.adapter.ProfileAdapter
 import com.emanuelvini.nuven.core.bungee.repository.PlayerPreferences
 import com.emanuelvini.nuven.core.shared.player.preferences.Preference
 import com.henryfabio.sqlprovider.executor.SQLExecutor
@@ -15,7 +16,7 @@ class PreferencesRepository(executor: SQLExecutor, private val preferences: List
     }
 
     override fun getData(name: String): PlayerPreferences {
-        TODO("Not yet implemented")
+        return cache.get(name).get()
     }
 
     override fun createTable() {
@@ -29,12 +30,32 @@ class PreferencesRepository(executor: SQLExecutor, private val preferences: List
         })
         executor
             .updateQuery(
-                "CREATE TABLE IF NOT EXISTS player_preferences ( ${tableBuilder.substring(0, tableBuilder.length - 1)} )",
+                "CREATE TABLE IF NOT EXISTS player_preferences ( name VARCHAR(16), ${tableBuilder.substring(0, tableBuilder.length - 1)} )",
             )
     }
 
-    override fun findData(name: String): PlayerPreferences? {
-        return null
+    override fun findData(name: String): PlayerPreferences {
+        val value = executor.resultQuery(
+            "SELECT * FROM nuvencore_preferences WHERE name = ?",
+            { simpleStatement -> simpleStatement.set(1, name) },
+            {
+                val playerPreference = PlayerPreferences(name, hashMapOf())
+                if (it.next()) {
+                    preferences.forEach { pref ->
+                        val v = it.get<Int>(pref.id)
+                        playerPreference.values[pref] = v
+                    }
+                } else {
+                    preferences.forEach { pref ->
+                        playerPreference.values[pref] = pref.defaultValue
+                    }
+                }
+                return@resultQuery playerPreference
+            }
+        )
+
+        return value
+
     }
 
     override fun saveData(data: PlayerPreferences) {}

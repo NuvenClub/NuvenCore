@@ -2,6 +2,8 @@ package com.emanuelvini.nuven.core.shared.player.preferences
 
 
 abstract class Preference (
-    private val name: String,
-            val id: String
+    val name: String,
+    val id: String,
+    val defaultValue : Int,
+    val valueType : PreferenceValueMappedType
 )

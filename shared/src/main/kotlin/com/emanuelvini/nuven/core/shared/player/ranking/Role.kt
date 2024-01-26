@@ -6,8 +6,8 @@ class Role(
     val prefix: String,
     val permission: String,
     val order: Int,
-    val alwaysInvisible : Boolean,
+    val staffRole: Boolean,
     val specialRole : Boolean,
     val joinBroadcast : Boolean,
-    val coloredChat: Boolean
+    val specialChat: Boolean
 )

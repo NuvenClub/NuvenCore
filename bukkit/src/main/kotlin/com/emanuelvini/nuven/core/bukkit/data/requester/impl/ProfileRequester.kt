@@ -17,12 +17,14 @@ class ProfileRequester (private val plugin: BukkitMain) : Requester<String, Prof
     override fun on(message: ByteArray) {
         val data = ByteStreams.newDataInput(message)
         val sbc = data.readUTF()
-        println(sbc)
+
         if (sbc == "profile-get") {
             val c = data.readUTF()
-            println(c)
             val profile = ProfileUtil.from(c)
             cache.asMap()[profile.owner] = profile
+            println(waiters[profile.owner])
+            waiters[profile.owner]?.forEach { it(profile) }
+
         }
     }
 
@@ -37,17 +39,22 @@ class ProfileRequester (private val plugin: BukkitMain) : Requester<String, Prof
 
 
 
+
     override operator fun get(key: String): Profile? {
         val value = cache.getIfPresent(key)
         if (value == null) {
-            val m = ByteStreams.newDataOutput()
-            m.writeUTF("profileget")
-            m.writeUTF(key  )
-            plugin.server.onlinePlayers.first().sendPluginMessage(plugin, "nvcore:main", m.toByteArray())
+            requestData(key)
 
         }
 
+
         return value
+    }
+    fun requestData(key : String) {
+        val m = ByteStreams.newDataOutput()
+        m.writeUTF("profileget")
+        m.writeUTF(key  )
+        plugin.server.onlinePlayers.first().sendPluginMessage(plugin, "nvcore:main", m.toByteArray())
     }
 
 }

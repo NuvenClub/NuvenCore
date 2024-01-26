@@ -3,3 +3,4 @@ description: NuvenCore for BungeeCord bridge.
 main: com.emanuelvini.nuven.core.bungee.BungeeMain
 version: 1.0.0-BETA
 author: emanuelVINI
+depends:  [LuckPerms]

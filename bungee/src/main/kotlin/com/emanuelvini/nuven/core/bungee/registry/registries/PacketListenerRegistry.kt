@@ -1,6 +1,7 @@
 package com.emanuelvini.nuven.core.bungee.registry.registries
 
 import com.emanuelvini.nuven.core.bungee.BungeeMain
+import com.emanuelvini.nuven.core.bungee.listener.packet.AckPacketListener
 import com.emanuelvini.nuven.core.bungee.listener.packet.ProfilePacketListener
 import com.emanuelvini.nuven.core.bungee.registry.BungeeRegistry
 
@@ -10,6 +11,8 @@ class PacketListenerRegistry(plugin: BungeeMain) : BungeeRegistry(plugin) {
         plugin.proxy.registerChannel("nvcore:main")
         plugin.proxy.pluginManager
             .registerListener(plugin, ProfilePacketListener(plugin.proxy, plugin.proxy.scheduler, plugin.profileRepository!!, plugin ))
+        plugin.proxy.pluginManager
+            .registerListener(plugin, AckPacketListener(plugin.proxy, plugin.preferences))
         plugin.bungeeLogger.success("Canais de comunicações registrados com sucesso.")
     }
 }

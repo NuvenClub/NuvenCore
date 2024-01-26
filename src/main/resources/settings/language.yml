@@ -1,3 +1,6 @@
-tag:
-  applied: "&aSua tag foi alterada para {tag}&7."
-  list: "&aSuas tags disponíveis: "
+commands:
+  tag:
+    applied: "&aSua tag foi alterada para {tag}&7."
+    list: "&aSuas tags disponíveis: "
+chat:
+  message-blocked: "&cSua mensagem foi bloqueada por conter palavras indevidas."

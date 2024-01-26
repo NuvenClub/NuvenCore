@@ -13,15 +13,15 @@ object ProfileUtil {
         val roleOrder = roleProps[0].toInt()
         val rolePrefix = roleProps[1]
         val rolePermission = roleProps[2]
-        val roleAlwaysInvisible = roleProps[3].toBoolean()
+        val roleStaff = roleProps[3].toBoolean()
         val roleSpecialRole = roleProps[4].toBoolean()
         val roleJoinBroadcast = roleProps[5].toBoolean()
-        val roleColoredChat = roleProps[6].toBoolean()
+        val roleSpecialChat = roleProps[6].toBoolean()
         val roleName = roleProps[7]
         return Profile(
             owner,
             cash,
-            Role(roleName, rolePrefix, rolePermission, roleOrder, roleAlwaysInvisible, roleSpecialRole, roleJoinBroadcast, roleColoredChat)
+            Role(roleName, rolePrefix, rolePermission, roleOrder, roleStaff, roleSpecialRole, roleJoinBroadcast, roleSpecialChat)
         )
     }
 
@@ -29,6 +29,6 @@ object ProfileUtil {
         val role = profile.role
         val cash = profile.cash
         val owner = profile.owner
-        return "${owner};$cash;${role.order}:${role.prefix}:${role.permission}:${role.alwaysInvisible}:${role.specialRole}:${role.joinBroadcast}:${role.coloredChat}:${role.name}"
+        return "${owner};$cash;${role.order}:${role.prefix}:${role.permission}:${role.staffRole}:${role.specialRole}:${role.joinBroadcast}:${role.specialChat}:${role.name}"
     }
 }

@@ -14,15 +14,16 @@ class RoleManager {
 
     fun available(player : ProxiedPlayer) : List<Role> {
         val roles = roles.values.filter {
-            println(it.permission)
             player.hasPermission(it.permission)
         }.toMutableList()
         if (!roles.contains(this.roles[0])) roles.add(this.roles[0]!!)
+        roles.sortBy { it.order }
+        roles.reverse()
         return roles
     }
     fun available(player : PermissionHolder) : List<Role> {
         val roles = roles.values.filter { role ->
-            println(role.permission)
+
             player.getNodes().stream()
                 .filter {
                     it.type == NodeType.INHERITANCE || it.type == NodeType.PERMISSION
@@ -34,6 +35,8 @@ class RoleManager {
                 .contains(role.permission)
         }.toMutableList()
         roles.add(this.roles[0]!!)
+        roles.sortBy { it.order}
+        roles.reverse()
         return roles.toList()
     }
 }

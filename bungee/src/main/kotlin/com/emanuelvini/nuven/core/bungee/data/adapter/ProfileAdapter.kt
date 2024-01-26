@@ -10,8 +10,6 @@ class ProfileAdapter : SQLResultAdapter<Profile> {
     private val roleManager: RoleManager = BungeeMain.instance!!.roleManager
     override fun adaptResult(simpleResultSet: SimpleResultSet): Profile {
         val order = simpleResultSet.get("tag") as Int
-        print(order)
-        print(roleManager.roles.size)
         return Profile(
             simpleResultSet.get("name"),
             simpleResultSet.get("cash"),

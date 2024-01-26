@@ -8,6 +8,7 @@ import com.emanuelvini.nuven.core.shared.player.profile.util.ProfileUtil
 import com.emanuelvini.nuven.core.shared.registry.Registry
 import com.emanuelvini.nuven.core.shared.player.ranking.Role
 import net.luckperms.api.LuckPermsProvider
+import net.luckperms.api.event.node.NodeAddEvent
 import net.luckperms.api.event.node.NodeRemoveEvent
 import net.md_5.bungee.api.ChatColor
 import net.md_5.bungee.api.connection.ProxiedPlayer
@@ -37,7 +38,7 @@ class RoleRegistry(plugin: BungeeMain, private val profileRepository: ProfileRep
                 val role = loadRole(s.getSection(key))
                 roleManager.roles[role.order] = role
                 logger.success(
-                    "[ROLES]${ChatColor.GRAY} Cargo ${role.prefix} carregado com sucesso!"
+                    "[ROLES]${ChatColor.GRAY} Cargo ${role.name} carregado com sucesso!"
                 )
             } catch (e: Exception) {
                 logger.warn(
@@ -54,8 +55,24 @@ class RoleRegistry(plugin: BungeeMain, private val profileRepository: ProfileRep
                 val player : ProxiedPlayer? = plugin.proxy.getPlayer(UUID.fromString(it.target.identifier.name))
                 if (player != null) {
                     val profile = profileRepository.getData(player.name)
-                    profile.role = roleManager.available(player).last()
+                    profile.role = roleManager.available(player)[0]
                     PacketUtil.sendGetProfile(profile, player)
+                }
+
+            }
+        }
+        eventBus.subscribe(plugin, NodeAddEvent::class.java) {
+            if (it.isUser) {
+                val player : ProxiedPlayer? = plugin.proxy.getPlayer(UUID.fromString(it.target.identifier.name))
+                if (player != null) {
+                    val profile = profileRepository.getData(player.name)
+                    val role = roleManager.available(player)[0]
+                        if (role.order > profile.role.order) {
+                            profile.role = role
+                            PacketUtil.sendGetProfile(profile, player)
+
+                        }
+
                 }
 
             }

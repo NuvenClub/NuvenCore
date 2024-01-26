@@ -42,7 +42,7 @@ class ProfileRepository(
             { simpleStatement -> simpleStatement.set(1, name) },
             ProfileAdapter::class.java
         )
-        print (value != null)
+
         return value ?: createProfile(name)
     }
 

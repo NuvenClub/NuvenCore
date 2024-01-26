@@ -1,0 +1,68 @@
+
+delay: 3.0 # Em segundos
+min-length: 4
+  # Define as regras de substituição.
+  # - Lista de emojis: https://hypixel.net/threads/%E3%83%84symbols%E2%98%BB.787483/
+replaces:
+    - "vc,voce,vose,ce->você"
+    - "nois->nós"
+    - "nao->não"
+    - "tmb,tbm->também"
+    - "viajem->viagem"
+    - "viagar->viajar"
+    - "encima,emcima->em cima"
+    - ":christmas:,:natal:->☃"
+    - ":star:,:estrela:->★"
+    - ":music:,:musica:->♪"
+    - ":virus:->☣"
+    - ":urss:->☭"
+    - "<3,s2,S2->❤"
+    - ":smile:->◕‿◕"
+
+# Configurações do capslock.
+capslock:
+  # Define a porcentagem de capslock permitida nas mensagens.
+  percentage: 25
+
+  # Define as palavras que não sofrerão a remoção do capslock.
+
+  skip-words:
+    - 'VIP'
+    - 'VIP+'
+    - 'Master'
+
+censor:
+
+  # Define o comando usado para a punição de anúncios.
+  punishment-command: "/mute {player} Divulgando no servidor."
+
+  # Define a lista de URLs permitidas.
+  # - Os domínios inseridos deverão respeitar os seguintes limites da ICANN.
+  #
+  # - Regras da ICANN:
+  #  - ter no mínimo 3 e no máximo 63 caracteres;
+  #  - começar com uma letra ou número e finalizar com uma letra ou número;
+  #  - respeitar o conjunto de caracteres válidos: letras (a-z, A-Z), números (0-9) e/ou traços (-);
+  #
+  allowed-domains:
+    - 'youtube.com'
+    - 'youtu.be'
+    - 'twitch.tv'
+    - 'discord.com'
+    - 'discord.gg'
+    - 'nuven.club'
+    - 'hastebin.com'
+    - 'imgur.com'
+    - 'prntscr.com'
+    - 'prnt.scr'
+  # Define o trecho de mensagens que serão bloqueados.
+  #
+  #  (!) Durante o processamento...
+  #   - as palavras serão concatenadas para evitar "bypass".
+  #   - apenas o conjunto de caracteres padrão (a-zA-Z0-9) e de caracteres da mensagem bloqueada serão considerados.
+  #
+  #    * Exemplo: se o trecho "ataque bot" for bloqueado, mensagens como
+  #      "ataque.bot", "at.aque,bo!t" e "a,t.a.q,ue b,o.t" serão bloqueadas.
+  #
+  blocked-content:
+    - 'ip:'

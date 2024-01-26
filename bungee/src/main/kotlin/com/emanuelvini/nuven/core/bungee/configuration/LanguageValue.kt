@@ -9,11 +9,13 @@ import java.util.function.Function
 @ConfigFile("settings/language.yml")
 class LanguageValue : ConfigurationInjectable {
 
-    @ConfigField("tag.applied")
+    @ConfigField("commands.tag.applied")
     val tagApplied : String? = null
-    @ConfigField("tag.list")
+    @ConfigField("commands.tag.list")
     val tagList : String? = null
 
+    @ConfigField("chat.message-blocked")
+    val messageBlocked : String? = null
     companion object {
         val instance = LanguageValue()
 

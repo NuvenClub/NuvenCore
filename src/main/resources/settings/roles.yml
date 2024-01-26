@@ -13,9 +13,10 @@
 roles:
   master: ## nome do cargo
     prefix: '&6[Master] '
+    name: "&6Master"
     permission: 'role.master'
     # não esconder no lobby
-    always_invisible: true
+    staff_role: true
     # Permite que o jogador voe no lobby e a mensagem seja destacada.
     special_role: true
     order: 3
@@ -23,21 +24,23 @@ roles:
     broadcast: true
   admin:
     prefix: '&c[Admin] '
+    name: "&cAdmin"
     permission: 'role.admin'
-    always_invisible: true
+    staff_role: true
     special_role: true
     colored_chat: true
     order: 2
     broadcast: true
   vip:
+    name: "&aVIP"
     prefix: '&a[Vip] '
     permission: 'role.vip'
-    always_invisible: false
     special_role: true
     colored_chat: true
     order: 1
     broadcast: true
   membro:
+    name: "&7Membro"
     prefix: '&7'
     order: 0
     permission: ''
